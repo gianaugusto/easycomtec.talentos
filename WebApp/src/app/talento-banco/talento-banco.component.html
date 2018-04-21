@@ -1,0 +1,68 @@
+<!-- <h1>Banco de Talentos - Easy Communication & Technology (Developers/Desenvolvedores)</h1> -->
+
+<!-- <app-signup></app-signup> -->
+<!-- <app-formdemobasics></app-formdemobasics> -->
+
+<div class="py-5 text-center">
+        <h2>Banco de Talentos - Easy Communication & Technology (Developers/Desenvolvedores)</h2>
+    </div>
+
+    <h4 class="mb-3">Bank Information / Informação bancária</h4>
+
+    <div class="lead-info" dir="auto">You can choose to receive your payment through Paypal, PagSeguro or conventional bank accounts / Você pode optar em receber seu pagamento pelo Paypal, PagSeguro ou contas bancarias convencionais</div>
+    
+      <div class="row">
+        <div class="col-md-12 order-md-1">
+          <form class="needs-validation" novalidate>
+                
+            <div class="mb-3">
+                <label for="nome">Nome/Name:  </label>
+                <input type="text" class="form-control" id="nome" >
+                <div class="invalid-feedback">
+                        This is a required question
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="cpf">Only for Brazilians / CPF </label>
+                <input type="text" class="form-control" id="cpf" required>
+                <div class="invalid-feedback">
+                        This is a required question
+                </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="banco">Bank / Banco ( Itau, Bradesco, ect..) </label>
+              <input type="text" class="form-control" id="banco" >
+              <div class="invalid-feedback">
+                    This is a required question
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="agencia">Agency / Agencia </label>
+              <input type="text" class="form-control" id="agencia" >
+            </div>
+
+            <div class="row">
+                <label for="conta">Account Number / Número da conta</label>
+                <input type="text" class="form-control" id="conta" >
+            </div>           
+       
+            <h4 class="mb-3">Account Type / Tipo de conta</h4>
+
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="tipoconta" id="1">
+              <label class="custom-control-label" for="1">Chain / Corrente</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="tipoconta" id="2">
+              <label class="custom-control-label" for="2">Savings / Poupança</label>
+            </div>
+
+            <hr class="mb-4">
+
+            <a [routerLink]="['/talento/basic/1']" class="btn btn-primary">Voltar</a>
+            <a [routerLink]="['/talento/conhecimento/1']" class="btn btn-primary">proximo</a>
+          </form>
+        </div>

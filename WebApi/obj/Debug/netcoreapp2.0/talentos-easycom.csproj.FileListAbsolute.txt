@@ -1,0 +1,11 @@
+/Users/gian/Documents/Repositorio/Github/easycom-crud/talentos-easycom/talentos-easycom/bin/Debug/netcoreapp2.0/talentos-easycom.deps.json
+/Users/gian/Documents/Repositorio/Github/easycom-crud/talentos-easycom/talentos-easycom/bin/Debug/netcoreapp2.0/talentos-easycom.runtimeconfig.json
+/Users/gian/Documents/Repositorio/Github/easycom-crud/talentos-easycom/talentos-easycom/bin/Debug/netcoreapp2.0/talentos-easycom.runtimeconfig.dev.json
+/Users/gian/Documents/Repositorio/Github/easycom-crud/talentos-easycom/talentos-easycom/bin/Debug/netcoreapp2.0/talentos-easycom.dll
+/Users/gian/Documents/Repositorio/Github/easycom-crud/talentos-easycom/talentos-easycom/bin/Debug/netcoreapp2.0/talentos-easycom.pdb
+/Users/gian/Documents/Repositorio/Github/easycom-crud/talentos-easycom/talentos-easycom/obj/Debug/netcoreapp2.0/talentos-easycom.csprojResolveAssemblyReference.cache
+/Users/gian/Documents/Repositorio/Github/easycom-crud/talentos-easycom/talentos-easycom/obj/Debug/netcoreapp2.0/talentos-easycom.csproj.CoreCompileInputs.cache
+/Users/gian/Documents/Repositorio/Github/easycom-crud/talentos-easycom/talentos-easycom/obj/Debug/netcoreapp2.0/talentos-easycom.AssemblyInfoInputs.cache
+/Users/gian/Documents/Repositorio/Github/easycom-crud/talentos-easycom/talentos-easycom/obj/Debug/netcoreapp2.0/talentos-easycom.AssemblyInfo.cs
+/Users/gian/Documents/Repositorio/Github/easycom-crud/talentos-easycom/talentos-easycom/obj/Debug/netcoreapp2.0/talentos-easycom.dll
+/Users/gian/Documents/Repositorio/Github/easycom-crud/talentos-easycom/talentos-easycom/obj/Debug/netcoreapp2.0/talentos-easycom.pdb

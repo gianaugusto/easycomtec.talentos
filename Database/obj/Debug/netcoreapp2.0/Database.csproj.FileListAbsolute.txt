@@ -1,0 +1,17 @@
+/Users/gian/Documents/Repositorio/Github/easycom-crud/talentos-easycom/Database/bin/Debug/netcoreapp2.0/Database.deps.json
+/Users/gian/Documents/Repositorio/Github/easycom-crud/talentos-easycom/Database/bin/Debug/netcoreapp2.0/Database.dll
+/Users/gian/Documents/Repositorio/Github/easycom-crud/talentos-easycom/Database/bin/Debug/netcoreapp2.0/Database.pdb
+/Users/gian/Documents/Repositorio/Github/easycom-crud/talentos-easycom/Database/obj/Debug/netcoreapp2.0/Database.csproj.CoreCompileInputs.cache
+/Users/gian/Documents/Repositorio/Github/easycom-crud/talentos-easycom/Database/obj/Debug/netcoreapp2.0/Database.AssemblyInfoInputs.cache
+/Users/gian/Documents/Repositorio/Github/easycom-crud/talentos-easycom/Database/obj/Debug/netcoreapp2.0/Database.AssemblyInfo.cs
+/Users/gian/Documents/Repositorio/Github/easycom-crud/talentos-easycom/Database/obj/Debug/netcoreapp2.0/Database.dll
+/Users/gian/Documents/Repositorio/Github/easycom-crud/talentos-easycom/Database/obj/Debug/netcoreapp2.0/Database.pdb
+/Users/gian/Documents/Repositorio/Github/easycomtec.talentos/Database/bin/Debug/netcoreapp2.0/Database.deps.json
+/Users/gian/Documents/Repositorio/Github/easycomtec.talentos/Database/bin/Debug/netcoreapp2.0/Database.dll
+/Users/gian/Documents/Repositorio/Github/easycomtec.talentos/Database/bin/Debug/netcoreapp2.0/Database.pdb
+/Users/gian/Documents/Repositorio/Github/easycomtec.talentos/Database/obj/Debug/netcoreapp2.0/Database.csprojResolveAssemblyReference.cache
+/Users/gian/Documents/Repositorio/Github/easycomtec.talentos/Database/obj/Debug/netcoreapp2.0/Database.csproj.CoreCompileInputs.cache
+/Users/gian/Documents/Repositorio/Github/easycomtec.talentos/Database/obj/Debug/netcoreapp2.0/Database.AssemblyInfoInputs.cache
+/Users/gian/Documents/Repositorio/Github/easycomtec.talentos/Database/obj/Debug/netcoreapp2.0/Database.AssemblyInfo.cs
+/Users/gian/Documents/Repositorio/Github/easycomtec.talentos/Database/obj/Debug/netcoreapp2.0/Database.dll
+/Users/gian/Documents/Repositorio/Github/easycomtec.talentos/Database/obj/Debug/netcoreapp2.0/Database.pdb
