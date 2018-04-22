@@ -75,7 +75,18 @@ namespace WebApi
             using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
                 var context = serviceScope.ServiceProvider.GetRequiredService<Context>();
-                context.Database.EnsureCreated();
+
+                if(context.Database.EnsureCreated())
+                {
+                    var seed = new Database.Tools.Seed(context);
+
+                    // preenche os dados iniciais
+                    seed.ConhecimentoInicial();
+
+                    // preenche os dados iniciais
+                    seed.UsuarioInicial();
+
+                }
             }
         }
 

@@ -24,13 +24,13 @@ namespace Database.Models
                        bool horasQuatroASeis,
                        bool  horasSeisAOito,
                        bool horasAcimaDeOito,
-                        bool horasFimDeSemana,
-                        bool periodoManha,
+                       bool horasFimDeSemana,
+                       bool periodoManha,
                        bool periodoTarde,
                        bool periodoNoite,
                        bool periodoMadrugada,
-                       bool periodoComercial
-
+                       bool periodoComercial,
+                       string informacaoBancaria
                       )
         {
             Id = id;
@@ -75,11 +75,12 @@ namespace Database.Models
 
             LinkCrud = linkCrud;
 
+            InformacaoBancaria = informacaoBancaria;
         }
 
-        public void AddBanco(TalentoBanco banco) => Banco = banco;
+		public void AddBanco(TalentoBanco banco) => Banco = banco;
 
-        public void AddRangeConhecimento(List<TalentoConhecimento> conhecimentos) => Conhecimentos.AddRange(conhecimentos);
+        public void AddRangeConhecimento(IEnumerable<TalentoConhecimento> conhecimentos) => Conhecimentos.AddRange(conhecimentos);
 
         public void AddConhecimento(TalentoConhecimento conhecimento) => Conhecimentos.Add(conhecimento);
 
