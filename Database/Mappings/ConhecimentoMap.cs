@@ -13,7 +13,7 @@ namespace Database.Mappings
 
             modelBuilder.HasKey(c => c.Id);
 
-                modelBuilder.Property(c => c.Titulo).HasMaxLength(100);
+                modelBuilder.Property(c => c.Titulo).HasMaxLength(200);
 
                 modelBuilder.Property(c => c.Status);
             }

@@ -20,7 +20,7 @@ namespace Database.Mappings
             modelBuilder.Property(c => c.Telefone).HasMaxLength(20).IsRequired();
             modelBuilder.Property(c => c.Linkedin).HasMaxLength(100);
             modelBuilder.Property(c => c.Cidade).HasMaxLength(100).IsRequired();
-            modelBuilder.Property(c => c.Estado).HasMaxLength(2).IsRequired();
+            modelBuilder.Property(c => c.Estado).HasMaxLength(50).IsRequired();
             modelBuilder.Property(c => c.Portfolio).HasMaxLength(100);
             modelBuilder.Property(c => c.HorasAteQuatro).IsRequired();
             modelBuilder.Property(c => c.HorasQuatroASeis).IsRequired();
@@ -33,8 +33,8 @@ namespace Database.Mappings
             modelBuilder.Property(c => c.PeriodoMadrugada).IsRequired();
             modelBuilder.Property(c => c.PeriodoComercial).IsRequired();
             modelBuilder.Property(c => c.Pretensao).IsRequired();
-            modelBuilder.Property(c => c.InformacaoBancaria).IsRequired();
-            modelBuilder.Property(c => c.LinkCrud).HasMaxLength(200);
+            modelBuilder.Property(c => c.InformacaoBancaria);
+            modelBuilder.Property(c => c.LinkCrud).HasMaxLength(255);
 
             }
     }

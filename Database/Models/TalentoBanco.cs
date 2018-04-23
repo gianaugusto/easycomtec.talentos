@@ -16,7 +16,7 @@ namespace Database.Models
         {
             Id = id;
 
-            TalentoID = talentoID;
+            //TalentoID = talentoID;
 
             BancoCpf = bancoCpf;
 
@@ -34,7 +34,7 @@ namespace Database.Models
 
         }
 
-        public Guid TalentoID { get; set; }
+        public Guid? TalentoID { get; set; }
 
         public string BancoBeneficiario { get; set; }
 

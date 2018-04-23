@@ -19,7 +19,7 @@ namespace Database.Mappings
             modelBuilder.HasOne(c => c.Talento);
             modelBuilder.HasOne(c => c.Conhecimento);
 
-            modelBuilder.Property(c => c.Nivel).HasMaxLength(1);
+            modelBuilder.Property(c => c.Nivel);
 
         }
 

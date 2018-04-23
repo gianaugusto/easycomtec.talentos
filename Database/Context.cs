@@ -30,27 +30,19 @@ namespace Database
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            ///if para não realizar a configuração no caso do teste unitário por exemplo
-            //if (!optionsBuilder.IsConfigured)
-            //{
-            //    var config = new ConfigurationBuilder()
-            //    .SetBasePath(Directory.GetCurrentDirectory())
-            //    .AddJsonFile("appsettings.json")
-            //    .AddEnvironmentVariables()
-            //    .Build();
+            //if para não realizar a configuração no caso do teste unitário por exemplo
+            if (!optionsBuilder.IsConfigured)
+            {
+                var config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .AddEnvironmentVariables()
+                .Build();
 
-            //    var connectionString = config.GetConnectionString("DefaultConnection");
+                var connectionString = config.GetConnectionString("DefaultConnection");
 
-            //    if (string.IsNullOrEmpty(connectionString))
-            //        connectionString = "Data Source=127.0.0.1;Initial Catalog=BancoDeTalentoEasy;Integrated Security=False;User Id=sa;Password=@@bbccdd;MultipleActiveResultSets=True";
-
-            //    //SqlConnection conn = new SqlConnection(connectionString);
-
-            //    //conn.Open();
-            //    //conn.Close();
-
-            //    optionsBuilder.UseSqlServer(connectionString);
-            //}
+                optionsBuilder.UseSqlServer(connectionString);
+            }
         }
     }
 }

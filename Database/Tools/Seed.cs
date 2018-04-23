@@ -8,7 +8,9 @@ namespace Database.Tools
     public class Seed
     {
         //private readonly ITalentoRepository talentoRepository;
-        private readonly Context context;
+        //private readonly Context context;
+       
+        private Context context;
        
 
         public Seed( Context context)
@@ -36,6 +38,8 @@ namespace Database.Tools
         public void UsuarioInicial(){
 
             try{
+                context = new Context();
+
                 var talento = GetTalento();
 
                 // informacoes do banco
@@ -56,12 +60,12 @@ namespace Database.Tools
         }
 
         public Talento GetTalento()
-        => new Talento(Guid.Parse("312294c7-b6c6-452b-a44e-000000000000"),
+        => new Talento(Guid.Parse("123494c7-b6c6-452b-a44e-000000000000"),
                        "Giancarlos Macedo",
                        "gianaugusto@gmail.com",
                        "gianaugusto",
                         "15997575127",
-                       "http://gianaugusto@gmail.com",
+                       "http://gianaugusto",
                 "gianaugusto",
                 "sorocaba",
                 "SP",

@@ -41,7 +41,7 @@ namespace WebApi.Model
 
         public Guid Id { get; set; }
 
-        public Guid TalentoID { get; set; }
+        public Guid? TalentoID { get; set; }
 
         public string Banco { get; set; }
 

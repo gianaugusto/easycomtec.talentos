@@ -25,8 +25,13 @@ namespace WebApi.Controllers
 
         // GET api/talento
         [HttpGet]
-        public IEnumerable<TalentoModel> Get()
-        => mapper.Map<IEnumerable<TalentoModel>>(talentoRepository.GetAll());
+        public IEnumerable<TalentoModel> Get(){
+
+            var talentos = talentoRepository.GetAll().ToList();
+
+            return mapper.Map<IEnumerable<TalentoModel>>(talentos);    
+        }
+
 
         // GET api/talento/5
         [HttpGet("{id}")]

@@ -10,7 +10,6 @@ namespace WebApi.Model
                        string nome,
                        string email,
                        string skype,
-                       string whatsapp,
                        string telefone,
                        string linkedIn,
                        string cidade,
@@ -41,8 +40,6 @@ namespace WebApi.Model
             Telefone = telefone;
 
             Skype = skype;
-
-            Whatsapp = whatsapp;
 
             Linkedin = linkedIn;
 
@@ -82,7 +79,7 @@ namespace WebApi.Model
 
         public virtual List<TalentoConhecimentoModel> Conhecimentos { get; set; }
 
-        public virtual TalentoBancoModel TalentoInformacaoBancaria { get; set; }
+        public virtual TalentoBancoModel Banco { get; set; }
 
         public Guid Id { get; set; }
 
@@ -94,7 +91,6 @@ namespace WebApi.Model
 
         public string Skype { get; set; }
 
-        public string Whatsapp { get; set; }
 
         public string Linkedin { get; set; }
 

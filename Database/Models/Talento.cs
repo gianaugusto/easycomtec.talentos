@@ -33,7 +33,7 @@ namespace Database.Models
                        string informacaoBancaria
                       )
         {
-            Id = id;
+            //Id = id;
 
             Nome = nome;
 
@@ -76,14 +76,26 @@ namespace Database.Models
             LinkCrud = linkCrud;
 
             InformacaoBancaria = informacaoBancaria;
+
         }
 
 		public void AddBanco(TalentoBanco banco) => Banco = banco;
 
-        public void AddRangeConhecimento(IEnumerable<TalentoConhecimento> conhecimentos) => Conhecimentos.AddRange(conhecimentos);
+        public void AddRangeConhecimento(IEnumerable<TalentoConhecimento> conhecimentos)
+        {
+            if (Conhecimentos == null)
+                Conhecimentos = new List<TalentoConhecimento>();
+            
+            Conhecimentos.AddRange(conhecimentos);
+        }
 
-        public void AddConhecimento(TalentoConhecimento conhecimento) => Conhecimentos.Add(conhecimento);
+        public void AddConhecimento(TalentoConhecimento conhecimento)
+        {
+            if(Conhecimentos == null)
+                Conhecimentos = new List<TalentoConhecimento>();
 
+            Conhecimentos.Add(conhecimento);
+        }
         public virtual List<TalentoConhecimento> Conhecimentos { get; private set; }
 
         public virtual TalentoBanco Banco { get; private set; }
@@ -104,27 +116,27 @@ namespace Database.Models
 
         public string Portfolio { get; private set; }
 
-        public bool HorasAteQuatro { get; private set; }
+        public bool? HorasAteQuatro { get; private set; }
 
-        public bool HorasQuatroASeis { get; private set; }
+        public bool? HorasQuatroASeis { get; private set; }
 
-        public bool HorasSeisAOito { get; private set; }
+        public bool? HorasSeisAOito { get; private set; }
 
-        public bool HorasAcimaDeOito { get; private set; }
+        public bool? HorasAcimaDeOito { get; private set; }
 
-        public bool HorasFimDeSemana { get; private set; }
+        public bool? HorasFimDeSemana { get; private set; }
 
-        public bool PeriodoManha { get; private set; }
+        public bool? PeriodoManha { get; private set; }
 
-        public bool PeriodoTarde { get; private set; }
+        public bool? PeriodoTarde { get; private set; }
 
-        public bool PeriodoNoite { get; private set; }
+        public bool? PeriodoNoite { get; private set; }
 
-        public bool PeriodoMadrugada { get; private set; }
+        public bool? PeriodoMadrugada { get; private set; }
 
-        public bool PeriodoComercial { get; private set; }
+        public bool? PeriodoComercial { get; private set; }
 
-        public decimal Pretensao { get; private set; }
+        public decimal? Pretensao { get; private set; }
         
         public string InformacaoBancaria { get; private set; } 
         

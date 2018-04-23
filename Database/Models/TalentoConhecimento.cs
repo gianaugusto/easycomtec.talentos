@@ -13,7 +13,7 @@ namespace Database.Models
         {
             Id = new Guid();
             ConhecimentoID = conhecimentoID;
-            TalentoID = talentoID;
+            //TalentoID = talentoID;
             Nivel = nivel;
         }
 
@@ -30,7 +30,7 @@ namespace Database.Models
             Nivel = nivel;
         }
 
-        public Guid TalentoID { get; private set; }
+        public Guid? TalentoID { get; private set; }
 
         public Guid ConhecimentoID { get; private set; }
 
