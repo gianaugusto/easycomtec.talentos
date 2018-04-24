@@ -15,74 +15,44 @@
         <div class="col-md-12 order-md-1">
           <form class="needs-validation" novalidate>
                
-            <h4 class="mb-3">Ionic</h4>
-            <div class="row">
+            <div class="row" *ngFor="let conhecimento of conhecimentos">
+                    <h4 class="mb-3">{{conhecimento.titulo}}</h4>
                 <div class="col-md-4">
                     Nao conheco / I don't know
                 </div>
                 <div class="col-md-6">
                     <label class="radio-inline" for="radios-0">
-                        <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
+                        <input type="radio" name="{{conhecimento.id}}" id="{{conhecimento.id}}-0" value="1" checked="checked">
                         1
                     </label> 
                     <label class="radio-inline" for="radios-1">
-                        <input type="radio" name="radios" id="radios-1" value="2">
+                        <input type="radio" name="{{conhecimento.id}}" id="{{conhecimento.id}}-1" value="2">
                         2
                     </label> 
                     <label class="radio-inline" for="radios-2">
-                        <input type="radio" name="radios" id="radios-2" value="3">
+                        <input type="radio" name="{{conhecimento.id}}" id="{{conhecimento.id}}-2" value="3">
                         3
                     </label> 
                     <label class="radio-inline" for="radios-3">
-                        <input type="radio" name="radios" id="radios-3" value="4">
+                        <input type="radio" name="{{conhecimento.id}}" id="{{conhecimento.id}}-3" value="4">
                         4
                     </label>
                     <label class="radio-inline" for="radios-5">
-                        <input type="radio" name="radios" id="radios-5" value="5">
+                        <input type="radio" name="{{conhecimento.id}}" id="{{conhecimento.id}}-5" value="5">
                         5
                     </label>
                 </div>
                 <div class="col-md-2">
                   Senior
                 </div>
-              </div>
             
+
               <hr class="mb-4">
 
-            <h4 class="mb-3">SQL Server</h4>
+            </div>
+            
+<br> <br>
 
-            <div class="row">
-                <div class="col-md-4">
-                    Nao conheco / I don't know
-                </div>
-                <div class="col-md-6">
-                    <label class="radio-inline" for="radios-0">
-                        <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
-                        1
-                    </label> 
-                    <label class="radio-inline" for="radios-1">
-                        <input type="radio" name="radios" id="radios-1" value="2">
-                        2
-                    </label> 
-                    <label class="radio-inline" for="radios-2">
-                        <input type="radio" name="radios" id="radios-2" value="3">
-                        3
-                    </label> 
-                    <label class="radio-inline" for="radios-3">
-                        <input type="radio" name="radios" id="radios-3" value="4">
-                        4
-                    </label>
-                    <label class="radio-inline" for="radios-5">
-                        <input type="radio" name="radios" id="radios-5" value="5">
-                        5
-                    </label>
-                </div>
-                <div class="col-md-2">
-                  Senior
-                </div>
-              </div>
-
-            <hr class="mb-4">
             <a href="#" class="btn btn-primary btn-primary">Voltar</a>
             <a href="#" class="btn btn-primary btn-primary">Enviar</a>
           </form>

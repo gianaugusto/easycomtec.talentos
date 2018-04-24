@@ -4,6 +4,9 @@ namespace Database.Models
 {
     public class Conhecimento: EntityBase
     {
+        public Conhecimento()
+        {}
+
         public Conhecimento(Guid id, string titulo, Status status = Status.Ativo)
         {
             Id = id;

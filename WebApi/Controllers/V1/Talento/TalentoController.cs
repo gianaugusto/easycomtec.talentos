@@ -40,6 +40,11 @@ namespace WebApi.Controllers
         public TalentoModel Get(Guid id)
         => mapper.Map<TalentoModel>(talentoRepository.GetById(id));
 
+        // GET api/talento/email/aa@qaa.com
+        [HttpGet("email/{email}")]
+        public TalentoModel Get(string email)
+        => mapper.Map<TalentoModel>(talentoRepository.GetByEmail(email));
+
         // POST api/talento
         [HttpPost]
         public void Post([FromBody]TalentoModel model)

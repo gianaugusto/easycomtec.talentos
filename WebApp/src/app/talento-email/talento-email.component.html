@@ -15,7 +15,7 @@
                 
             <div class="mb-3">
               <label for="email">Email <span class="text-muted">*</span></label>
-              <input type="email" class="form-control" id="email" >
+              <input type="email" class="form-control" #email id="email" >
               <div class="invalid-feedback">
                     This is a required question
               </div>
@@ -23,7 +23,7 @@
             
             <hr class="mb-4">
             
-            <a [routerLink]="['/talento/basic/1']" class="btn btn-primary">proximo</a>
+            <a (click)="buscarPorEmail(email.value)" class="btn btn-primary">proximo</a>
             
           </form>
         </div>

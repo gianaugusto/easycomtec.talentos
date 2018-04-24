@@ -13,7 +13,7 @@ import { TalentoBancoComponent } from './talento-banco/talento-banco.component';
 import { TalentoConhecimentoComponent } from './talento-conhecimento/talento-conhecimento.component';
 import { TalentoListagemComponent } from "./talento-listagem/talento-listagem.component";
 import { TalentoModule } from "./talento/talento.module";
-
+import { ConhecimentoModule } from "./conhecimento/conhecimento.module";
 
 @NgModule({
   declarations: [
@@ -28,9 +28,10 @@ import { TalentoModule } from "./talento/talento.module";
     BrowserModule,
     FormsModule, 
     routing,
-    TalentoModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    TalentoModule,
+    ConhecimentoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

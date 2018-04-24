@@ -61,6 +61,7 @@ namespace WebApi
             var connString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<Context>(o => o.UseSqlServer(connString));
             services.AddScoped<ITalentoRepository, TalentoRepository>();
+            services.AddScoped<IConhecimentoRepository, ConhecimentoRepository>();
 
         }
 
