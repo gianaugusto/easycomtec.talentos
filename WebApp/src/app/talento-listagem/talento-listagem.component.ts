@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TalentoComponent } from "../talento/talento.component";
+import { TalentoService } from "../talento/talento.service";
 
 @Component({
     moduleId: module.id,
@@ -6,6 +8,22 @@ import { Component } from '@angular/core';
     templateUrl: 'talento-listagem.component.html',
     styleUrls: ['talento-listagem.component.scss']
 })
+
 export class TalentoListagemComponent {
+
+    talentos: TalentoComponent[] = [];
+    service:TalentoService;
+    mensagem:string = "";
+
+    constructor(service:TalentoService) {
+        this.service = service
+        
+        this.service.lista()
+            .subscribe(
+                talentos => this.talentos = talentos,
+                erro => console.log(erro)
+            );
+
+    }
 
 }

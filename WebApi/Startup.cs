@@ -26,6 +26,13 @@ namespace WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(o => o.AddPolicy("AllowAll", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
+
             services.AddMvc(options =>
             {
                 options.Filters.Add(typeof(ValidateModel));
@@ -65,11 +72,22 @@ namespace WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            // Enable Cors
+            app.UseCors("AllowAll");
+
+
             app.UseMvc();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Talentos easycom V1");
+            });
+
+            app.UseCors(c =>
+            {
+                c.AllowAnyHeader();
+                c.AllowAnyMethod();
+                c.AllowAnyOrigin();
             });
 
             using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
@@ -88,6 +106,7 @@ namespace WebApi
 
                 }
             }
+
         }
 
     }

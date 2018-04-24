@@ -2,12 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms'
 import { routing } from './app.routes';
+
+import { HttpModule } from '@angular/http'
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { TalentoEmailComponent } from './talento-email/talento-email.component';
 import { TalentoBasicInfoComponent } from './talento-basic-info/talento-basic-info.component';
 import { TalentoBancoComponent } from './talento-banco/talento-banco.component';
 import { TalentoConhecimentoComponent } from './talento-conhecimento/talento-conhecimento.component';
 import { TalentoListagemComponent } from "./talento-listagem/talento-listagem.component";
+import { TalentoModule } from "./talento/talento.module";
+
 
 @NgModule({
   declarations: [
@@ -21,7 +27,10 @@ import { TalentoListagemComponent } from "./talento-listagem/talento-listagem.co
   imports: [
     BrowserModule,
     FormsModule, 
-    routing
+    routing,
+    TalentoModule,
+    HttpModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

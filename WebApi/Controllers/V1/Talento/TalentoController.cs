@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Database.Interfaces;
 using Database.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Model;
 
 namespace WebApi.Controllers
 {
+    
     [Route("api/v1/[controller]")]
     public class TalentoController : Controller
     {
@@ -53,6 +55,7 @@ namespace WebApi.Controllers
             var talento = talentoRepository.GetById(id);
 
             talento = mapper.Map<Talento>(model);
+
 
             talentoRepository.Update(talento);
             talentoRepository.SaveChanges();
