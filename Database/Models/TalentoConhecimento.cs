@@ -4,6 +4,10 @@ namespace Database.Models
 {
     public class TalentoConhecimento: EntityBase
     {
+        public TalentoConhecimento()
+        {
+
+        }
 
         public TalentoConhecimento(
             Guid conhecimentoID, 
@@ -13,8 +17,8 @@ namespace Database.Models
         {
             Id = new Guid();
             ConhecimentoID = conhecimentoID;
-            //TalentoID = talentoID;
-            Nivel = nivel;
+            TalentoID = talentoID;
+            Nivel = (int)nivel;
         }
 
         public TalentoConhecimento(
@@ -27,14 +31,14 @@ namespace Database.Models
             Id = id;
             ConhecimentoID = conhecimentoID;
             TalentoID = talentoID;
-            Nivel = nivel;
+            Nivel = (int)nivel;
         }
 
         public Guid? TalentoID { get; private set; }
 
         public Guid ConhecimentoID { get; private set; }
 
-        public NivelConhecimento Nivel{ get; private set; }
+        public int Nivel{ get; private set; }
 
         public virtual Talento Talento { get; set; }
 

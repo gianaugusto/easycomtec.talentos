@@ -32,7 +32,7 @@ namespace Database.Repositories
         public int SaveChanges() => Db.SaveChanges();
 
         public void Dispose()
-        {
+            {
             Db.Dispose();
             GC.SuppressFinalize(this);
         }

@@ -13,7 +13,7 @@ namespace Database.Mappings
 
             modelBuilder.HasKey(c => c.Id);
             modelBuilder.HasOne(c => c.Banco);
-            modelBuilder.HasMany(c => c.Conhecimentos);
+            modelBuilder.HasMany<TalentoConhecimento>(c => c.Conhecimentos);
             modelBuilder.Property(c => c.Nome).HasMaxLength(100).IsRequired();
             modelBuilder.Property(c => c.Email).HasMaxLength(100).IsRequired();
             modelBuilder.Property(c => c.Skype).HasMaxLength(20).IsRequired();

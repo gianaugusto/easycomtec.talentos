@@ -17,52 +17,44 @@
                 
             <div class="mb-3">
                 <label for="nome">Nome/Name:  </label>
-                <input type="text" class="form-control" id="nome" >
-                <div class="invalid-feedback">
-                        This is a required question
-                </div>
+                <input type="text" class="form-control" id="nome" value="{{talento.banco.bancoBeneficiario}}">
             </div>
             
             <div class="mb-3">
                 <label for="cpf">Only for Brazilians / CPF </label>
-                <input type="text" class="form-control" id="cpf" required>
-                <div class="invalid-feedback">
-                        This is a required question
-                </div>
+                <input type="text" class="form-control" id="cpf" value="{{talento.banco.bancoCpf}}">
             </div>
 
             <div class="mb-3">
               <label for="banco">Bank / Banco ( Itau, Bradesco, ect..) </label>
-              <input type="text" class="form-control" id="banco" >
-              <div class="invalid-feedback">
-                    This is a required question
-              </div>
+              <input type="text" class="form-control" id="banco"  value="{{talento.banco.bancoNome}}">
             </div>
 
             <div class="mb-3">
               <label for="agencia">Agency / Agencia </label>
-              <input type="text" class="form-control" id="agencia" >
+              <input type="text" class="form-control" id="agencia"  value="{{talento.banco.bancoAgencia}}">
             </div>
 
             <div class="row">
                 <label for="conta">Account Number / Número da conta</label>
-                <input type="text" class="form-control" id="conta" >
+                <input type="text" class="form-control" id="conta"  value="{{talento.banco.bancoConta}}">
             </div>           
        
             <h4 class="mb-3">Account Type / Tipo de conta</h4>
 
             <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" name="tipoconta" id="1">
+              <input type="checkbox" class="custom-control-input" name="tipoconta" id="1" checked="{{talento.banco.bancoContaCorrente}}">
               <label class="custom-control-label" for="1">Chain / Corrente</label>
             </div>
             <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" name="tipoconta" id="2">
+              <input type="checkbox" class="custom-control-input" name="tipoconta" id="2" checked="{{talento.banco.bancoContaPoupanca}}">
               <label class="custom-control-label" for="2">Savings / Poupança</label>
             </div>
 
             <hr class="mb-4">
-
-            <a [routerLink]="['/talento/basic/1']" class="btn btn-primary">Voltar</a>
-            <a [routerLink]="['/talento/conhecimento/1']" class="btn btn-primary">proximo</a>
+           
+            <a [routerLink]="['/talento/',talento.id]" class="btn btn-primary">Voltar</a>
+            <a (click)="SalvarBanco()" class="btn btn-primary">proximo</a>
+           
           </form>
         </div>

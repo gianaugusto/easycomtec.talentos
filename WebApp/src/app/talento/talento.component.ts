@@ -88,24 +88,20 @@ export class TalentoConhecimento {
 
 export class TalentoBanco {
     
-        @Input() Id :string;
+        @Input() id :string;
 
-        @Input() TalentoID :string;
+        @Input() bancoBeneficiario :string;
 
-        @Input() Banco :string;
+        @Input() bancoCpf :string;
 
-        @Input() BancoBeneficiario :string;
+        @Input() bancoNome :string;
 
-        @Input() BancoCpf :string;
+        @Input() bancoAgencia :string;
 
-        @Input() BancoNome :string;
+        @Input() bancoContaCorrente :string;
 
-        @Input() BancoAgencia :string;
+        @Input() bancoContaPoupanca :string;
 
-        @Input() BancoContaCorrente :string;
-
-        @Input() BancoContaPoupanca :string;
-
-        @Input() BancoConta :string;
+        @Input() bancoConta :string;
        
 }

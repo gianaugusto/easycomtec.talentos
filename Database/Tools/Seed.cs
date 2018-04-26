@@ -53,6 +53,7 @@ namespace Database.Tools
 
                 // save
                 context.SaveChanges();
+
             }catch(Exception e){
                 Console.Write(e);
             }
@@ -63,7 +64,7 @@ namespace Database.Tools
         => new Talento(Guid.Parse("123494c7-b6c6-452b-a44e-000000000000"),
                        "Giancarlos Macedo",
                        "gianaugusto@gmail.com",
-                       "gianaugusto",
+                         "gianaugusto",
                         "15997575127",
                        "http://gianaugusto",
                 "gianaugusto",

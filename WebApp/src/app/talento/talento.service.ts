@@ -39,4 +39,7 @@ export class TalentoService {
         return this.http.get<TalentoComponent>(environment.urlApiTalento + "/email/" + email);
     }
 
+    buscarPorId(id:string):Observable<TalentoComponent>{
+        return this.http.get<TalentoComponent>(environment.urlApiTalento + "/" + id);
+    }
 }

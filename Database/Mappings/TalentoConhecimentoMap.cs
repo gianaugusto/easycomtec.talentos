@@ -12,13 +12,10 @@ namespace Database.Mappings
             modelBuilder.ToTable("TalentoConhecimento");
 
             modelBuilder.HasKey(c => c.Id);
-
-            modelBuilder.Property(c => c.TalentoID);
             modelBuilder.Property(c => c.ConhecimentoID);
-
             modelBuilder.HasOne(c => c.Talento);
             modelBuilder.HasOne(c => c.Conhecimento);
-
+            modelBuilder.Property(c => c.TalentoID);
             modelBuilder.Property(c => c.Nivel);
 
         }

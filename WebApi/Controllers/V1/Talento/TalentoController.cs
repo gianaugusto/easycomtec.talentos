@@ -8,6 +8,7 @@ using Database.Models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebApi.Controllers
 {
@@ -29,9 +30,19 @@ namespace WebApi.Controllers
         [HttpGet]
         public IEnumerable<TalentoModel> Get(){
 
-            var talentos = talentoRepository.GetAll().ToList();
+            try{
+                var talentos = talentoRepository                   
+                .GetAll()           
+                .Include(t => t.Banco)
+                .Include(t => t.Conhecimentos)
+                .ToList();
 
-            return mapper.Map<IEnumerable<TalentoModel>>(talentos);    
+                return mapper.Map<IEnumerable<TalentoModel>>(talentos);    
+        
+            }catch(Exception e){
+                Console.Write(e);
+                return new List<TalentoModel>();
+            }
         }
 
 
@@ -57,13 +68,42 @@ namespace WebApi.Controllers
         [HttpPut("{id}")]
         public void Put(Guid id, [FromBody]TalentoModel model)
         {
-            var talento = talentoRepository.GetById(id);
+            var talento = talentoRepository
+                    .GetById(id);
+            //.Include(t => t.Banco)
+            //.Include(t => t.Conhecimentos);
 
-            talento = mapper.Map<Talento>(model);
+            try
+            {
 
+                talento = mapper.Map<Talento>(model);
 
-            talentoRepository.Update(talento);
-            talentoRepository.SaveChanges();
+                talentoRepository.Update(talento);
+                talentoRepository.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                throw ex;
+                //foreach (var entry in ex.Entries)
+                //{
+                //        var proposedValues = entry.CurrentValues;
+                //        var databaseValues = entry.GetDatabaseValues();
+
+                //        foreach (var property in proposedValues.Properties)
+                //        {
+                //            var proposedValue = proposedValues[property];
+                //            var databaseValue = databaseValues[property];
+
+                //            // TODO: decide which value should be written to database
+                //            // proposedValues[property] = <value to be saved>;
+                //        }
+
+                //        // Refresh original values to bypass next concurrency check
+                //        entry.OriginalValues.SetValues(databaseValues);
+                   
+                //}
+            }
+
         }
 
         // DELETE api/talento/5

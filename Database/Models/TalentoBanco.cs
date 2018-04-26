@@ -4,6 +4,11 @@ namespace Database.Models
 {
     public class TalentoBanco: EntityBase
     {
+        public TalentoBanco()
+        {
+
+        }
+
         public TalentoBanco(Guid id,
                             Guid talentoID,
                             string bancoCpf,
@@ -16,7 +21,7 @@ namespace Database.Models
         {
             Id = id;
 
-            //TalentoID = talentoID;
+            TalentoID = talentoID;
 
             BancoCpf = bancoCpf;
 

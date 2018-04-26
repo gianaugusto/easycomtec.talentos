@@ -13,7 +13,6 @@ namespace WebApi.Model
                                 bool bancoContaCorrente,
                                 bool bancoContaPoupanca,
                                 string bancoConta,
-                                string banco,
                                 string bancoBeneficiario)
         {
 
@@ -33,8 +32,6 @@ namespace WebApi.Model
 
             BancoConta = bancoConta;
 
-            Banco = banco;
-
             BancoBeneficiario = bancoBeneficiario;
 
         }
@@ -42,8 +39,6 @@ namespace WebApi.Model
         public Guid Id { get; set; }
 
         public Guid? TalentoID { get; set; }
-
-        public string Banco { get; set; }
 
         public string BancoBeneficiario { get; set; }
 

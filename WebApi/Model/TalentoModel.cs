@@ -5,6 +5,10 @@ namespace WebApi.Model
 {
     public class TalentoModel
     {
+        public TalentoModel()
+        {
+
+        }
 
         public TalentoModel(Guid id,
                        string nome,
@@ -15,7 +19,6 @@ namespace WebApi.Model
                        string cidade,
                        string estado,
                        string portfolio,
-
                        string informacaoBancaria,
                        decimal pretensao,
                        string linkCrud,
@@ -87,10 +90,9 @@ namespace WebApi.Model
 
         public string Email { get; set; }
 
-        public string Telefone { get; private set; }
+        public string Telefone { get; set; }
 
         public string Skype { get; set; }
-
 
         public string Linkedin { get; set; }
 
