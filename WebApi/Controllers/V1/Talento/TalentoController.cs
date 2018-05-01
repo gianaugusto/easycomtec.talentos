@@ -69,42 +69,47 @@ namespace WebApi.Controllers
         public void Put(Guid id, [FromBody]TalentoModel model)
         {
             var talento = talentoRepository
-                    .GetById(id);
-            //.Include(t => t.Banco)
-            //.Include(t => t.Conhecimentos);
+                .GetAll()
+                .Include(t => t.Banco)
+                .Include(t => t.Conhecimentos)
+                .FirstOrDefault(o => o.Id == id);
 
-            try
-            {
+                talento.Update(
+                       model.Nome,
+                       model.Email,
+                       model.Skype,
+                       model.Telefone,
+                       model.Linkedin,
+                       model.Cidade,
+                       model.Estado,
+                       model.Portfolio,
+                       model.Pretensao,
+                       model.LinkCrud,
+                       model.HorasAteQuatro,
+                       model.HorasQuatroASeis,
+                       model.HorasSeisAOito,
+                       model.HorasAcimaDeOito,
+                       model.HorasFimDeSemana,
+                       model.PeriodoManha,
+                       model.PeriodoTarde,
+                       model.PeriodoNoite,
+                       model.PeriodoMadrugada,
+                       model.PeriodoComercial,
+                       model.InformacaoBancaria
+                );
 
-                talento = mapper.Map<Talento>(model);
+            //
+            talento.AddBanco(mapper.Map<TalentoBanco>(model.Banco));
 
-                talentoRepository.Update(talento);
-                talentoRepository.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException ex)
-            {
-                throw ex;
-                //foreach (var entry in ex.Entries)
-                //{
-                //        var proposedValues = entry.CurrentValues;
-                //        var databaseValues = entry.GetDatabaseValues();
+            //
+            var conhecimentos = mapper.Map<List<TalentoConhecimento>>(model.Conhecimentos);
+            talento.AddRangeConhecimento(conhecimentos);
 
-                //        foreach (var property in proposedValues.Properties)
-                //        {
-                //            var proposedValue = proposedValues[property];
-                //            var databaseValue = databaseValues[property];
-
-                //            // TODO: decide which value should be written to database
-                //            // proposedValues[property] = <value to be saved>;
-                //        }
-
-                //        // Refresh original values to bypass next concurrency check
-                //        entry.OriginalValues.SetValues(databaseValues);
-                   
-                //}
-            }
-
+            talentoRepository.Update(talento);
+            talentoRepository.SaveChanges();
+           
         }
+
 
         // DELETE api/talento/5
         [HttpDelete("{id}")]

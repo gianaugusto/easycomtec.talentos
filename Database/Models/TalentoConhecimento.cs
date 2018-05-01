@@ -44,5 +44,9 @@ namespace Database.Models
 
         public virtual Conhecimento Conhecimento { get; set; }
 
+        internal void SetNivel(int nivel)
+        {
+            //throw new NotImplementedException();
+        }
     }
 }

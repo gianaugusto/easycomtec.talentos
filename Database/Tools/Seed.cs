@@ -92,32 +92,32 @@ namespace Database.Tools
 
             var conhecimentos = new List<TalentoConhecimento>();
 
-            conhecimentos.Add(new TalentoConhecimento(Guid.Parse("002294c7-b6c6-452b-a44e-2a680e7551ad"),talentoID));
-            conhecimentos.Add(new TalentoConhecimento(Guid.Parse("012294c7-b6c6-452b-a44e-2a680e7651ad"),talentoID));
-            conhecimentos.Add(new TalentoConhecimento(Guid.Parse("022294c7-b6c6-452b-a44e-2a680e7751ad"),talentoID));
-            conhecimentos.Add(new TalentoConhecimento(Guid.Parse("032294c7-b6c6-452b-a44e-2a680e7851ad"),talentoID));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("042294c7-b6c6-452b-a44e-2a680e7251ad"), talentoID, NivelConhecimento.Senior));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("052294c7-b6c6-452b-a44e-2a680e7252ad"), talentoID, NivelConhecimento.Senior));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("072294c7-b6c6-452b-a44e-2a680e7253ad"), talentoID, NivelConhecimento.Senior));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("082294c7-b6c6-452b-a44e-2a680e7254ad"), talentoID, NivelConhecimento.Senior));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("092294c7-b6c6-452b-a44e-2a680e7255ad"),talentoID, NivelConhecimento.Senior));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("102294c7-b6c6-452b-a44e-2a680e7256ad"),talentoID));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("112294c7-b6c6-452b-a44e-2a680e7257ad"),talentoID));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("122294c7-b6c6-452b-a44e-2a680e7258ad"),talentoID));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("132294c7-b6c6-452b-a44e-2a680e7259ad"),talentoID));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("142294c7-b6c6-452b-a44e-2a680e7211ad"),talentoID));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("152294c7-b6c6-452b-a44e-2a680e7221ad"),talentoID));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("162294c7-b6c6-452b-a44e-2a680e7231ad"),talentoID));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("172294c7-b6c6-452b-a44e-2a680e7241ad"),talentoID));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("182294c7-b6c6-452b-a44e-2a680e7251ad"),talentoID));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("192294c7-b6c6-452b-a44e-2a680e7261ad"),talentoID));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("202294c7-b6c6-452b-a44e-2a680e7271ad"),talentoID));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("212294c7-b6c6-452b-a44e-2a680e7281ad"),talentoID));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("222294c7-b6c6-452b-a44e-2a680e7291ad"),talentoID));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("232294c7-b6c6-452b-a44e-2a680e7151ad"),talentoID));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("242294c7-b6c6-452b-a44e-2a680e7251ad"),talentoID));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("252294c7-b6c6-452b-a44e-2a680e7351ad"),talentoID));
-			conhecimentos.Add(new TalentoConhecimento(Guid.Parse("262294c7-b6c6-452b-a44e-2a680e7451ad"),talentoID));
+            conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("002294c7-b6c6-452b-a44e-2a680e7551ad"),talentoID));
+            conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("012294c7-b6c6-452b-a44e-2a680e7651ad"),talentoID));
+            conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("022294c7-b6c6-452b-a44e-2a680e7751ad"),talentoID));
+            conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("032294c7-b6c6-452b-a44e-2a680e7851ad"),talentoID));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("042294c7-b6c6-452b-a44e-2a680e7251ad"), talentoID, NivelConhecimento.Senior));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("052294c7-b6c6-452b-a44e-2a680e7252ad"), talentoID, NivelConhecimento.Senior));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("072294c7-b6c6-452b-a44e-2a680e7253ad"), talentoID, NivelConhecimento.Senior));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("082294c7-b6c6-452b-a44e-2a680e7254ad"), talentoID, NivelConhecimento.Senior));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("092294c7-b6c6-452b-a44e-2a680e7255ad"),talentoID, NivelConhecimento.Senior));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("102294c7-b6c6-452b-a44e-2a680e7256ad"),talentoID));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("112294c7-b6c6-452b-a44e-2a680e7257ad"),talentoID));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("122294c7-b6c6-452b-a44e-2a680e7258ad"),talentoID));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("132294c7-b6c6-452b-a44e-2a680e7259ad"),talentoID));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("142294c7-b6c6-452b-a44e-2a680e7211ad"),talentoID));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("152294c7-b6c6-452b-a44e-2a680e7221ad"),talentoID));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("162294c7-b6c6-452b-a44e-2a680e7231ad"),talentoID));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("172294c7-b6c6-452b-a44e-2a680e7241ad"),talentoID));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("182294c7-b6c6-452b-a44e-2a680e7251ad"),talentoID));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("192294c7-b6c6-452b-a44e-2a680e7261ad"),talentoID));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("202294c7-b6c6-452b-a44e-2a680e7271ad"),talentoID));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("212294c7-b6c6-452b-a44e-2a680e7281ad"),talentoID));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("222294c7-b6c6-452b-a44e-2a680e7291ad"),talentoID));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("232294c7-b6c6-452b-a44e-2a680e7151ad"),talentoID));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("242294c7-b6c6-452b-a44e-2a680e7251ad"),talentoID));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("252294c7-b6c6-452b-a44e-2a680e7351ad"),talentoID));
+			conhecimentos.Add(new TalentoConhecimento(Guid.Empty,Guid.Parse("262294c7-b6c6-452b-a44e-2a680e7451ad"),talentoID));
 
 
             return conhecimentos;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 //using FluentValidation;
 
 namespace Database.Models
@@ -33,7 +34,7 @@ namespace Database.Models
                        string informacaoBancaria
                       )
         {
-            //Id = id;
+            Id = id;
 
             Nome = nome;
 
@@ -79,14 +80,110 @@ namespace Database.Models
 
         }
 
-		public void AddBanco(TalentoBanco banco) => Banco = banco;
+        public void Update(
+                       string nome,
+                       string email,
+                       string skype,
+                       string telefone,
+                       string linkedIn,
+                       string cidade,
+                       string estado,
+                       string portfolio,
+                       decimal pretensao,
+                       string linkCrud,
+                       bool horasAteQuatro,
+                       bool horasQuatroASeis,
+                       bool horasSeisAOito,
+                       bool horasAcimaDeOito,
+                       bool horasFimDeSemana,
+                       bool periodoManha,
+                       bool periodoTarde,
+                       bool periodoNoite,
+                       bool periodoMadrugada,
+                       bool periodoComercial,
+                       string informacaoBancaria
+                      )
+        {
+          
+            Nome = nome;
+
+            Email = email;
+
+            Telefone = telefone;
+
+            Skype = skype;
+
+            Linkedin = linkedIn;
+
+            Cidade = cidade;
+
+            Estado = estado;
+
+            Portfolio = portfolio;
+
+            HorasAteQuatro = horasAteQuatro;
+
+            HorasQuatroASeis = horasQuatroASeis;
+
+            HorasSeisAOito = horasSeisAOito;
+
+            HorasAcimaDeOito = horasAcimaDeOito;
+
+            HorasFimDeSemana = horasFimDeSemana;
+
+            PeriodoManha = periodoManha;
+
+            PeriodoTarde = periodoTarde;
+
+            PeriodoNoite = periodoNoite;
+
+            PeriodoMadrugada = periodoMadrugada;
+
+            PeriodoComercial = periodoComercial;
+
+            Pretensao = pretensao;
+
+            LinkCrud = linkCrud;
+
+            InformacaoBancaria = informacaoBancaria;
+
+        }
+
+        public void AddBanco(TalentoBanco banco) {
+
+            if(this.Banco == null)
+                this.Banco = banco;
+            else{
+                
+                this.Banco.BancoAgencia = banco.BancoAgencia;
+                this.Banco.BancoBeneficiario = banco.BancoBeneficiario;
+                this.Banco.BancoConta = banco.BancoConta;
+                this.Banco.BancoCpf = banco.BancoCpf;
+                this.Banco.BancoNome = banco.BancoNome;
+                this.Banco.BancoContaCorrente = banco.BancoContaCorrente;
+                this.Banco.BancoContaPoupanca = banco.BancoContaPoupanca;
+
+            }
+
+        } 
+
+
+		//public void AddBanco(TalentoBanco banco) => Banco = banco;
 
         public void AddRangeConhecimento(IEnumerable<TalentoConhecimento> conhecimentos)
         {
-            if (Conhecimentos == null)
-                Conhecimentos = new List<TalentoConhecimento>();
-            
-            Conhecimentos.AddRange(conhecimentos);
+            TalentoConhecimento conhecimento;
+
+            foreach (var item in conhecimentos)
+            {
+                conhecimento = Conhecimentos.FirstOrDefault(c => c.ConhecimentoID == item.TalentoID && c.TalentoID == item.ConhecimentoID);
+
+                if (conhecimento != null)
+                    conhecimento.SetNivel(item.Nivel);
+                else
+                    AddConhecimento(item);
+            }
+
         }
 
         public void AddConhecimento(TalentoConhecimento conhecimento)
@@ -96,6 +193,7 @@ namespace Database.Models
 
             Conhecimentos.Add(conhecimento);
         }
+
         public virtual List<TalentoConhecimento> Conhecimentos { get; private set; }
 
         public virtual TalentoBanco Banco { get; private set; }

@@ -23,6 +23,17 @@ namespace Database.Repositories
 
         public virtual TEntity GetById(TID id) => DbSet.Find(id);
 
+        public virtual TEntity GetById(Guid id, string includes){
+            var dbSet = DbSet;
+
+            foreach (var item in includes.Split(','))
+            {
+                dbSet.Include(item);
+            }
+
+            return dbSet.FirstOrDefault(o => o.Id == id);
+        }
+
         public virtual IQueryable<TEntity> GetAll() => DbSet;
 
         public virtual void Update(TEntity obj) => DbSet.Update(obj);

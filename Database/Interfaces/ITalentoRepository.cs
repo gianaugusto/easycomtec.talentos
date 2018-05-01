@@ -6,5 +6,6 @@ namespace Database.Interfaces
     public interface ITalentoRepository : IRepository<Talento, Guid>
     {
         Talento GetByEmail(string email);
-    }
+
+	}
 }

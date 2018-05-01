@@ -1,6 +1,8 @@
 ﻿using System;
 using AutoMapper;
 using AutoMapper.Configuration;
+using Database.Models;
+using WebApi.Model;
 
 namespace WebApi.Map
 {
@@ -12,19 +14,20 @@ namespace WebApi.Map
             /// </summary>
             public static void Init()
             {
+
+                Configuration.AddProfile<MapCustom>();
+                      
                 // Static mapper
                 Mapper.Initialize(Configuration);
+                
 
-                // ...Or instance mapper
-                var mapperConfiguration = new MapperConfiguration(Configuration);
-                var mapper = mapperConfiguration.CreateMapper();
-                // ...
             }
 
             /// <summary>
             /// Mapper configuration
             /// </summary>
-            public static MapperConfigurationExpression Configuration { get; } = new MapperConfigurationExpression();
+            public static MapperConfigurationExpression Configuration { get; } 
+                                = new MapperConfigurationExpression();
         }
     }
 

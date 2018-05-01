@@ -11,6 +11,8 @@ namespace Database.Interfaces
 
         TEntity GetById(TID id);
 
+        TEntity GetById(Guid id, string includes);
+
         IQueryable<TEntity> GetAll();
 
         void Update(TEntity entity);

@@ -14,6 +14,8 @@ namespace WebApi.Model
             Nivel = nivel;
         }
 
+        public Guid? Id { get; private set; }
+
         public Guid? TalentoID { get; private set; }
 
         public Guid ConhecimentoID { get; private set; }
