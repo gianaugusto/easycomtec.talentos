@@ -8,7 +8,7 @@ import { TalentoComponent } from "./talento.component";
 export class TalentoDataService {
 
   private talentoSource = new BehaviorSubject<TalentoComponent>(new TalentoComponent());
-  currentTalentoSource = this.talentoSource.asObservable();
+  public currentTalentoSource = this.talentoSource.asObservable();
 
   constructor() { }
 

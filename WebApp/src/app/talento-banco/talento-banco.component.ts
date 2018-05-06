@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { TalentoComponent, TalentoBanco } from "../talento/talento.component";
 import { TalentoService } from "../talento/talento.service";
 import { TalentoDataService } from "../talento/talento.data.service";
 import { TalentoBase } from "../talento/talento.base";
+import { TalentoComponent, TalentoBanco, TalentoConhecimento } from "../talento/talento.component";
 
 @Component({
     moduleId: module.id,
@@ -19,36 +19,22 @@ export class TalentoBancoComponent extends TalentoBase implements OnInit {
         router: Router,
         route:ActivatedRoute) {
             super(service,dataService,router,route);
-    }
 
-    ngOnInit() {
-        this.dataService.currentTalentoSource.subscribe(
-            talento => 
-            {
-                this.talento = talento;
-    
-                this.verificarBanco();
-            }
-        );
+
+            this.verificarBanco();
     }
 
     verificarBanco(){
         if(this.talento.banco == null){
-            this.talento.AdicionarBanco(new TalentoBanco());
+            //this.talento.AdicionarBanco(new TalentoBanco());
+            this.talento.banco = new TalentoBanco();
         }
     }
 
-    SalvarBanco(){
-        this.service.cadastrar(this.talento)
-        .subscribe(
-            response => {
-                
-                this.dataService.setTalento(this.talento);
-
-                this.router.navigate(['/talento/conhecimento/',this.talento.id]);
-            },
-            erro => console.log(erro)
-        );
+    SalvarBanco(event){
+        event.preventDefault();
+        
+        this.SalvarDados('/talento/conhecimento/');
     }
 }
 

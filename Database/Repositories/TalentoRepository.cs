@@ -16,7 +16,18 @@ namespace Database.Repositories
 
         public Talento GetByEmail(string email)
         {
-            return DbSet.FirstOrDefault(c => c.Email == email);
+            return DbSet
+                .Include(t => t.Banco)
+                .Include(t => t.Conhecimentos)
+                .FirstOrDefault(c => c.Email == email);
+        }
+
+        public Talento GetByID(Guid id)
+        {
+            return DbSet
+                .Include(t => t.Banco)
+                .Include(t => t.Conhecimentos)
+                .FirstOrDefault(c => c.Id == id);
         }
     }
 }

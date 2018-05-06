@@ -21,17 +21,13 @@ export class TalentoEmailComponent extends TalentoBase { //implements OnInit {
             super(service,dataService,router,route);
     }
 
-    // ngOnInit() {
-    //     this.dataService.currentTalentoSource.subscribe(talento => this.talento = talento)
-    // }
-
     buscarPorEmail(email:string){
         this.service.buscarPorEmail(email)
         .subscribe(
             talento => {
                 this.talento = talento;
 
-                if(this.talento ==null)
+                if(this.talento == null)
                     this.talento = new TalentoComponent();
 
                 this.dataService.setTalento(this.talento);

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
     moduleId: module.id,
@@ -8,8 +8,9 @@ import { Component } from '@angular/core';
 })
 export class ConhecimentoComponent {
 
-    id:string;
+    @Input() id:string;
 
-    titulo:string;
+    @Input() titulo:string;
 
+    @Input() valor:number;
 }

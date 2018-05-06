@@ -61,19 +61,19 @@ export class TalentoComponent {
 
         banco:TalentoBanco;
 
-        AdicionarBanco(banco:TalentoBanco) {
+        public AdicionarBanco(banco:TalentoBanco):void {
             this.banco = banco;
         }
 
-        AdicionarConhecimento(conhecimento :TalentoConhecimento) {
-            this.conhecimentos.push(conhecimento);
-        }
+        // public AdicionarConhecimento(conhecimento :TalentoConhecimento) {
+        //     this.conhecimentos.push(conhecimento);
+        // }
 
-        AdicionarConhecimentos(conhecimentos :TalentoConhecimento[]) {
-            var concatConhecimento = this.conhecimentos.concat(conhecimentos);
+        // public AdicionarConhecimento(conhecimentos :TalentoConhecimento[]) {
+        //     var concatConhecimento = this.conhecimentos.concat(conhecimentos);
 
-            this.conhecimentos = concatConhecimento;
-        }
+        //     this.conhecimentos = concatConhecimento;
+        // }
 }
 
 
@@ -84,6 +84,8 @@ export class TalentoConhecimento {
     @Input() conhecimentoID :string;
 
     @Input() nivel :number;
+
+    @Input() titulo : string;
 }
 
 export class TalentoBanco {

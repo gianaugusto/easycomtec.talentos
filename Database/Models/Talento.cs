@@ -78,6 +78,7 @@ namespace Database.Models
 
             InformacaoBancaria = informacaoBancaria;
 
+            Conhecimentos = new List<TalentoConhecimento>();
         }
 
         public void Update(
@@ -147,6 +148,8 @@ namespace Database.Models
 
             InformacaoBancaria = informacaoBancaria;
 
+            if (Conhecimentos == null)
+                Conhecimentos = new List<TalentoConhecimento>();
         }
 
         public void AddBanco(TalentoBanco banco) {
@@ -176,7 +179,7 @@ namespace Database.Models
 
             foreach (var item in conhecimentos)
             {
-                conhecimento = Conhecimentos.FirstOrDefault(c => c.ConhecimentoID == item.TalentoID && c.TalentoID == item.ConhecimentoID);
+                conhecimento = Conhecimentos.FirstOrDefault(c => c.ConhecimentoID == item.ConhecimentoID && c.TalentoID == item.TalentoID);
 
                 if (conhecimento != null)
                     conhecimento.SetNivel(item.Nivel);
@@ -194,7 +197,7 @@ namespace Database.Models
             Conhecimentos.Add(conhecimento);
         }
 
-        public virtual List<TalentoConhecimento> Conhecimentos { get; private set; }
+        public virtual List<TalentoConhecimento> Conhecimentos { get ; private set; }
 
         public virtual TalentoBanco Banco { get; private set; }
 

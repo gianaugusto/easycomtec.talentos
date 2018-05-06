@@ -1,5 +1,5 @@
 
-    <div class="py-5 text-center">
+<div class="py-5 text-center">
         <h2>Banco de Talentos - Easy Communication & Technology (Developers/Desenvolvedores)</h2>
     </div>
 
@@ -10,19 +10,21 @@
       <div class="row">
         <div class="col-md-12 order-md-1">
          
-          <form class="needs-validation" (submit)="SalvarInfo($event)" >
+          <form class="row" [formGroup]='talentoForm' (submit)="SalvarInfo($event)" >
     
             <div class="mb-3">
                 <label for="nome">Nome/Name:  <span class="text-muted">*</span></label>
-                <input type="text" name="nome" class="form-control" id="nome" [(ngModel)]="talento.nome">
+                <input type="text" formControlName="nome" class="form-control" id="nome" [(ngModel)]="talento.nome">
                 <div class="invalid-feedback">
                         This is a required question
                 </div>
             </div>
             
+            
+            
             <div class="mb-3">
                 <label for="skype">Skype: ( please create an account if you don't have yet / bom criar caso não tenha) <span class="text-muted">*</span></label>
-                <input type="text" name="skype" class="form-control" id="skype" required [(ngModel)]="talento.skype">
+                <input type="text" formControlName="skype" class="form-control" id="skype" required [(ngModel)]="talento.skype">
                 <div class="invalid-feedback">
                         This is a required question
                 </div>
@@ -30,25 +32,25 @@
 
             <div class="mb-3">
               <label for="telefone">Telefone/Phone (Whatsapp): <span class="text-muted">*</span></label>
-              <input type="text" name="telefone" class="form-control" id="telefone" [(ngModel)]="talento.telefone">
+              <input type="text" formControlName="telefone" class="form-control" id="telefone" [(ngModel)]="talento.telefone">
             </div>
 
             <div class="mb-3">
               <label for="linkedin">Linkedin: <span class="text-muted">*</span></label>
-              <input type="text" name="linkedin" class="form-control" id="linkedin" [(ngModel)]="talento.linkedin">
+              <input type="text" formControlName="linkedin" class="form-control" id="linkedin" [(ngModel)]="talento.linkedin">
             </div>
 
             <div class="row">
               <div class="col-md-6">
                 <label for="cidade">Cidade</label>
-                <input type="text" class="form-control" id="cidade" name="cidade" [(ngModel)]="talento.cidade" required>
+                <input type="text" class="form-control" id="cidade" formControlName="cidade" [(ngModel)]="talento.cidade" required>
                 <div class="invalid-feedback">
                         This is a required question
                 </div>
               </div>
               <div class="col-md-6">
                 <label for="estado">Estado</label>
-                <input type="text" class="form-control" id="estado" name="estado" [(ngModel)]="talento.estado" required>
+                <input type="text" class="form-control" id="estado" formControlName="estado" [(ngModel)]="talento.estado" required>
                 <div class="invalid-feedback">
                         This is a required question
                 </div>
@@ -58,29 +60,29 @@
             
             <div class="mb-3">
                 <label for="portfolio">Portifolio: </label>
-                <input type="text" class="form-control" id="portfolio" name="portfolio" [(ngModel)]="talento.portfolio">
+                <input type="text" class="form-control" id="portfolio" formControlName="portfolio" [(ngModel)]="talento.portfolio">
             </div>
 
             <h4 class="mb-3">What is your willingness to work today? / Qual é sua disponibilidade para trabalhar hoje? *</h4>
 
             <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="disponibilidade-1" name="horasAteQuatro" [(ngModel)]="talento.horasAteQuatro">
+              <input type="checkbox" class="custom-control-input" id="1" formControlName="horasAteQuatro" [(ngModel)]="talento.horasAteQuatro">
               <label class="custom-control-label" for="1">Up to 4 hours per day / Até 4 horas por dia</label>
             </div>
             <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="disponibilidade-2" name="horasAteSeis" [(ngModel)]="talento.horasAteSeis">
+              <input type="checkbox" class="custom-control-input" id="2" formControlName="horasAteSeis" [(ngModel)]="talento.horasAteSeis">
               <label class="custom-control-label" for="2">4 to 6 hours per day / De 4 á 6 horas por dia</label>
             </div>
             <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="disponibilidade-3" name="horasAteOito" [(ngModel)]="talento.horasAteOito">
+                    <input type="checkbox" class="custom-control-input" id="3" formControlName="horasAteOito" [(ngModel)]="talento.horasAteOito">
                     <label class="custom-control-label" for="3">6 to 8 hours per day /De 6 á 8 horas por dia</label>
             </div>
             <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="disponibilidade-4" name="horasAcimaDeOito" [(ngModel)]="talento.horasAcimaDeOito">
+                    <input type="checkbox" class="custom-control-input" id="4" formControlName="horasAcimaDeOito" [(ngModel)]="talento.horasAcimaDeOito">
                     <label class="custom-control-label" for="4">Up to 8 hours a day (are you sure?) / Acima de 8 horas por dia (tem certeza?)</label>
             </div>
             <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="disponibilidade-5" name="horasFimDeSemana" [(ngModel)]="talento.horasFimDeSemana">
+                    <input type="checkbox" class="custom-control-input" id="5" formControlName="horasFimDeSemana" [(ngModel)]="talento.horasFimDeSemana">
                     <label class="custom-control-label" for="5">Only weekends / Apenas finais de semana</label>
             </div>
 
@@ -89,23 +91,23 @@
             <h4 class="mb-3">What's the best time to work for you? / Pra você qual é o melhor horário para trabalhar? *</h4>
 
             <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="horario-1" name="periodoManha" [(ngModel)]="talento.periodoManha">
+              <input type="checkbox" class="custom-control-input" id="1" formControlName="periodoManha" [(ngModel)]="talento.periodoManha">
               <label class="custom-control-label" for="1">Morning (from 08:00 to 12:00) / Manhã (de 08:00 ás 12:00)</label>
             </div>
             <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="horario-2" name="periodoTarde" [(ngModel)]="talento.periodoTarde">
+              <input type="checkbox" class="custom-control-input" id="2" formControlName="periodoTarde" [(ngModel)]="talento.periodoTarde">
               <label class="custom-control-label" for="2">Afternoon (from 1:00 p.m. to 6:00 p.m.) / Tarde (de 13:00 ás 18:00)</label>
             </div>
             <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="horario-3" name="periodoNoite" [(ngModel)]="talento.periodoNoite">
+                    <input type="checkbox" class="custom-control-input" id="3" formControlName="periodoNoite" [(ngModel)]="talento.periodoNoite">
                     <label class="custom-control-label" for="3">Night (7:00 p.m. to 10:00 p.m.) /Noite (de 19:00 as 22:00)</label>
             </div>
             <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="horario-4" name="periodoMadrugada" [(ngModel)]="talento.periodoMadrugada">
+                    <input type="checkbox" class="custom-control-input" id="4" formControlName="periodoMadrugada" [(ngModel)]="talento.periodoMadrugada">
                     <label class="custom-control-label" for="4">Dawn (from 10 p.m. onwards) / Madrugada (de 22:00 em diante)</label>
             </div>
             <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="horario-5" name="periodoComercia" [(ngModel)]="talento.periodoComercia">
+                    <input type="checkbox" class="custom-control-input" id="5" formControlName="periodoComercia" [(ngModel)]="talento.periodoComercia">
                     <label class="custom-control-label" for="5">Business (from 08:00 a.m. to 06:00 p.m.) / Comercial (de 08:00 as 18:00)</label>
             </div>
             
@@ -113,7 +115,7 @@
 
             <div class="mb-3">
               <label for="pretensao">What is your hourly salary requirements? / Qual sua pretensão salarial por hora? *: <span class="text-muted">*</span></label>
-              <input type="text" class="form-control" id="pretensao" name="pretensao" [(ngModel)]="talento.pretensao">
+              <input type="text" class="form-control" id="pretensao" formControlName="pretensao" [(ngModel)]="talento.pretensao">
             </div>
 
             <hr class="mb-4">
@@ -123,7 +125,8 @@
             <button type="submit" class="btn btn-primary">
                 proximo
             </button>
-            
+            <!-- <a (click)="SalvarInfo()" class="btn btn-primary">proximo</a> -->
+           
           </form>
         </div>
       </div>

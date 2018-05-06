@@ -49,7 +49,7 @@ namespace WebApi.Controllers
         // GET api/talento/5
         [HttpGet("{id}")]
         public TalentoModel Get(Guid id)
-        => mapper.Map<TalentoModel>(talentoRepository.GetById(id));
+        => mapper.Map<TalentoModel>(talentoRepository.GetByID(id));
 
         // GET api/talento/email/aa@qaa.com
         [HttpGet("email/{email}")]
@@ -99,12 +99,16 @@ namespace WebApi.Controllers
                 );
 
             //
-            talento.AddBanco(mapper.Map<TalentoBanco>(model.Banco));
+            if(model.Banco != null)
+                talento.AddBanco(mapper.Map<TalentoBanco>(model.Banco));
 
             //
-            var conhecimentos = mapper.Map<List<TalentoConhecimento>>(model.Conhecimentos);
-            talento.AddRangeConhecimento(conhecimentos);
-
+            if (model.Conhecimentos != null && model.Conhecimentos.Count > 0)
+            {
+                var conhecimentos = mapper.Map<List<TalentoConhecimento>>(model.Conhecimentos);
+                talento.AddRangeConhecimento(conhecimentos);
+               
+            }
             talentoRepository.Update(talento);
             talentoRepository.SaveChanges();
            

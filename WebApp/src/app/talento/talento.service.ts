@@ -24,7 +24,7 @@ export class TalentoService {
     cadastrar(Talento:TalentoComponent): Observable<any> {
         if(Talento.id){
             return this.http
-            .put(environment.urlApiTalento + '/' + Talento.id,JSON.stringify(Talento),{headers:this.headers});
+            .put(environment.urlApiTalento + '/' + Talento.id,Talento);
         }else{
             return this.http
             .post(environment.urlApiTalento,JSON.stringify(Talento),{headers:this.headers});
@@ -40,6 +40,7 @@ export class TalentoService {
     }
 
     buscarPorId(id:string):Observable<TalentoComponent>{
+        console.log(environment.urlApiTalento + "/" + id);
         return this.http.get<TalentoComponent>(environment.urlApiTalento + "/" + id);
     }
 }

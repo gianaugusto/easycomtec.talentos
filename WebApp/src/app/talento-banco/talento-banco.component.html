@@ -1,7 +1,3 @@
-<!-- <h1>Banco de Talentos - Easy Communication & Technology (Developers/Desenvolvedores)</h1> -->
-
-<!-- <app-signup></app-signup> -->
-<!-- <app-formdemobasics></app-formdemobasics> -->
 
 <div class="py-5 text-center">
         <h2>Banco de Talentos - Easy Communication & Technology (Developers/Desenvolvedores)</h2>
@@ -13,48 +9,51 @@
     
       <div class="row">
         <div class="col-md-12 order-md-1">
-          <form class="needs-validation" novalidate>
-                
+          <form class="needs-validation" (submit)="SalvarBanco($event)">
+          
             <div class="mb-3">
-                <label for="nome">Nome/Name:  </label>
-                <input type="text" class="form-control" id="nome" value="{{talento.banco.bancoBeneficiario}}">
+                <label for="bancoBeneficiario">Nome/Name:  </label>
+                <input type="text" class="form-control" id="bancoBeneficiario" name="bancoBeneficiario" [(ngModel)]="talento.banco.bancoBeneficiario">
             </div>
             
             <div class="mb-3">
-                <label for="cpf">Only for Brazilians / CPF </label>
-                <input type="text" class="form-control" id="cpf" value="{{talento.banco.bancoCpf}}">
+                <label for="bancoCpf">Only for Brazilians / CPF </label>
+                <input type="text" class="form-control" id="bancoCpf" name="bancoCpf" [(ngModel)]="talento.banco.bancoCpf">
             </div>
 
             <div class="mb-3">
-              <label for="banco">Bank / Banco ( Itau, Bradesco, ect..) </label>
-              <input type="text" class="form-control" id="banco"  value="{{talento.banco.bancoNome}}">
+              <label for="bancoNome">Bank / Banco ( Itau, Bradesco, ect..) </label>
+              <input type="text" class="form-control" id="bancoNome" name="bancoNome" [(ngModel)]="talento.banco.bancoNome">
             </div>
 
             <div class="mb-3">
-              <label for="agencia">Agency / Agencia </label>
-              <input type="text" class="form-control" id="agencia"  value="{{talento.banco.bancoAgencia}}">
+              <label for="bancoAgencia">Agency / Agencia </label>
+              <input type="text" class="form-control" id="bancoAgencia" name="bancoAgencia" [(ngModel)]="talento.banco.bancoAgencia">
             </div>
 
             <div class="row">
-                <label for="conta">Account Number / Número da conta</label>
-                <input type="text" class="form-control" id="conta"  value="{{talento.banco.bancoConta}}">
+                <label for="bancoConta">Account Number / Número da conta</label>
+                <input type="text" class="form-control" id="bancoConta" name="bancoConta" [(ngModel)]="talento.banco.bancoConta">
             </div>           
        
             <h4 class="mb-3">Account Type / Tipo de conta</h4>
 
             <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" name="tipoconta" id="1" checked="{{talento.banco.bancoContaCorrente}}">
-              <label class="custom-control-label" for="1">Chain / Corrente</label>
+              <input type="checkbox" class="custom-control-input" name="bancoContaCorrente" id="bancoContaCorrente" [(ngModel)]="talento.banco.bancoContaCorrente">
+              <label class="custom-control-label" for="bancoContaCorrente">Chain / Corrente</label>
             </div>
             <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" name="tipoconta" id="2" checked="{{talento.banco.bancoContaPoupanca}}">
-              <label class="custom-control-label" for="2">Savings / Poupança</label>
+              <input type="checkbox" class="custom-control-input" name="bancoContaPoupanca" id="bancoContaPoupanca" [(ngModel)]="talento.banco.bancoContaPoupanca">
+              <label class="custom-control-label" for="bancoContaPoupanca">Savings / Poupança</label>
             </div>
 
             <hr class="mb-4">
            
             <a [routerLink]="['/talento/',talento.id]" class="btn btn-primary">Voltar</a>
-            <a (click)="SalvarBanco()" class="btn btn-primary">proximo</a>
-           
+            <button type="submit" class="btn btn-primary">
+                proximo
+            </button>
+          
           </form>
         </div>
+      </div>

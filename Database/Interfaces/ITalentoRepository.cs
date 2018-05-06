@@ -7,5 +7,7 @@ namespace Database.Interfaces
     {
         Talento GetByEmail(string email);
 
+        Talento GetByID(Guid id);
+
 	}
 }

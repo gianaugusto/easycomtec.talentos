@@ -49,7 +49,7 @@ namespace Database.Tools
                 talento.AddRangeConhecimento(GetTalentoConhecimentos(talento.Id));
 
                 // add to context
-                context.Add<Talento>(talento);
+                context.Add(talento);
 
                 // save
                 context.SaveChanges();
