@@ -1,4 +1,5 @@
-import { Component, DoCheck } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TalentoService } from "../talento/talento.service";
 import { TalentoDataService } from "../talento/talento.data.service";
@@ -7,11 +8,12 @@ import { TalentoComponent, TalentoBanco, TalentoConhecimento } from "../talento/
 
 @Component({
     moduleId: module.id,
-    selector: 'talento-banco',
-    templateUrl: 'talento-banco.component.html',
-    styleUrls: ['talento-banco.component.scss']
+    selector: 'talento-finished',
+    templateUrl: 'talento-finished.component.html',
+    styleUrls: ['talento-finished.component.scss']
 })
-export class TalentoBancoComponent extends TalentoBase implements DoCheck {
+
+export class TalentoFinishedComponent extends TalentoBase implements OnInit {
     
     constructor(
         service:TalentoService,  
@@ -19,21 +21,6 @@ export class TalentoBancoComponent extends TalentoBase implements DoCheck {
         router: Router,
         route:ActivatedRoute) {
             super(service,dataService,router,route);
-
-           
-    }
-
-    ngDoCheck(){
-        if(this.talento.banco == null){
-            this.talento.NovoBanco();
-            this.dataService.setTalento(this.talento);
-        }
-    }
-
-    SalvarBanco(event){
-        event.preventDefault();
-        
-        this.SalvarDados('/talento/conhecimento/');
     }
 }
 

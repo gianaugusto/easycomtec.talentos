@@ -11,8 +11,8 @@ import { TalentoBase } from '../talento/talento.base';
     templateUrl: 'talento-email.component.html',
     styleUrls: ['talento-email.component.scss']
 })
-export class TalentoEmailComponent extends TalentoBase { //implements OnInit {
-    
+export class TalentoEmailComponent extends TalentoBase { 
+
     constructor(
         service:TalentoService,  
         dataService: TalentoDataService, 
@@ -25,14 +25,20 @@ export class TalentoEmailComponent extends TalentoBase { //implements OnInit {
         this.service.buscarPorEmail(email)
         .subscribe(
             talento => {
-                this.talento = talento;
+                this.talento = (talento as TalentoComponent);
 
-                if(this.talento == null)
+                if(this.talento == null){
                     this.talento = new TalentoComponent();
+                    this.talento.NewID();
+                    this.talento.novo = true;
+                    this.talento.email = email;
+                }
 
                 this.dataService.setTalento(this.talento);
 
-                this.router.navigate(['/talento/basic/',talento.id]);
+                console.log(this.talento)
+
+                this.router.navigate(['/talento/basic/',this.talento.id]);
             },
             erro => console.log(erro)
         );

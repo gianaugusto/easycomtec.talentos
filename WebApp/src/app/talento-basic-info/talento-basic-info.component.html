@@ -31,6 +31,9 @@
             <div class="mb-3">
               <label for="telefone">Telefone/Phone (Whatsapp): <span class="text-muted">*</span></label>
               <input type="text" name="telefone" class="form-control" id="telefone" [(ngModel)]="talento.telefone">
+              <div class="invalid-feedback">
+                    This is a required question
+            </div>
             </div>
 
             <div class="mb-3">
@@ -65,23 +68,23 @@
 
             <div class="custom-control custom-checkbox">
               <input type="checkbox" class="custom-control-input" id="disponibilidade-1" name="horasAteQuatro" [(ngModel)]="talento.horasAteQuatro">
-              <label class="custom-control-label" for="1">Up to 4 hours per day / Até 4 horas por dia</label>
+              <label class="custom-control-label" for="disponibilidade-1">Up to 4 hours per day / Até 4 horas por dia</label>
             </div>
             <div class="custom-control custom-checkbox">
               <input type="checkbox" class="custom-control-input" id="disponibilidade-2" name="horasAteSeis" [(ngModel)]="talento.horasAteSeis">
-              <label class="custom-control-label" for="2">4 to 6 hours per day / De 4 á 6 horas por dia</label>
+              <label class="custom-control-label" for="disponibilidade-2">4 to 6 hours per day / De 4 á 6 horas por dia</label>
             </div>
             <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="disponibilidade-3" name="horasAteOito" [(ngModel)]="talento.horasAteOito">
-                    <label class="custom-control-label" for="3">6 to 8 hours per day /De 6 á 8 horas por dia</label>
+                    <label class="custom-control-label" for="disponibilidade-3">6 to 8 hours per day /De 6 á 8 horas por dia</label>
             </div>
             <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="disponibilidade-4" name="horasAcimaDeOito" [(ngModel)]="talento.horasAcimaDeOito">
-                    <label class="custom-control-label" for="4">Up to 8 hours a day (are you sure?) / Acima de 8 horas por dia (tem certeza?)</label>
+                    <label class="custom-control-label" for="disponibilidade-4">Up to 8 hours a day (are you sure?) / Acima de 8 horas por dia (tem certeza?)</label>
             </div>
             <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="disponibilidade-5" name="horasFimDeSemana" [(ngModel)]="talento.horasFimDeSemana">
-                    <label class="custom-control-label" for="5">Only weekends / Apenas finais de semana</label>
+                    <label class="custom-control-label" for="disponibilidade-5">Only weekends / Apenas finais de semana</label>
             </div>
 
             <hr class="mb-4">
@@ -90,23 +93,23 @@
 
             <div class="custom-control custom-checkbox">
               <input type="checkbox" class="custom-control-input" id="horario-1" name="periodoManha" [(ngModel)]="talento.periodoManha">
-              <label class="custom-control-label" for="1">Morning (from 08:00 to 12:00) / Manhã (de 08:00 ás 12:00)</label>
+              <label class="custom-control-label" for="horario-1">Morning (from 08:00 to 12:00) / Manhã (de 08:00 ás 12:00)</label>
             </div>
             <div class="custom-control custom-checkbox">
               <input type="checkbox" class="custom-control-input" id="horario-2" name="periodoTarde" [(ngModel)]="talento.periodoTarde">
-              <label class="custom-control-label" for="2">Afternoon (from 1:00 p.m. to 6:00 p.m.) / Tarde (de 13:00 ás 18:00)</label>
+              <label class="custom-control-label" for="horario-2">Afternoon (from 1:00 p.m. to 6:00 p.m.) / Tarde (de 13:00 ás 18:00)</label>
             </div>
             <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="horario-3" name="periodoNoite" [(ngModel)]="talento.periodoNoite">
-                    <label class="custom-control-label" for="3">Night (7:00 p.m. to 10:00 p.m.) /Noite (de 19:00 as 22:00)</label>
+                    <label class="custom-control-label" for="horario-3">Night (7:00 p.m. to 10:00 p.m.) /Noite (de 19:00 as 22:00)</label>
             </div>
             <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="horario-4" name="periodoMadrugada" [(ngModel)]="talento.periodoMadrugada">
-                    <label class="custom-control-label" for="4">Dawn (from 10 p.m. onwards) / Madrugada (de 22:00 em diante)</label>
+                    <label class="custom-control-label" for="horario-4">Dawn (from 10 p.m. onwards) / Madrugada (de 22:00 em diante)</label>
             </div>
             <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="horario-5" name="periodoComercia" [(ngModel)]="talento.periodoComercia">
-                    <label class="custom-control-label" for="5">Business (from 08:00 a.m. to 06:00 p.m.) / Comercial (de 08:00 as 18:00)</label>
+                    <label class="custom-control-label" for="horario-5">Business (from 08:00 a.m. to 06:00 p.m.) / Comercial (de 08:00 as 18:00)</label>
             </div>
             
             <hr class="mb-4">

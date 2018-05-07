@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
 import { TalentoComponent } from "../talento/talento.component";
 import { TalentoService } from "../talento/talento.service";
 
@@ -23,7 +24,14 @@ export class TalentoListagemComponent {
                 talentos => this.talentos = talentos,
                 erro => console.log(erro)
             );
+    }
 
+    excluir(id:string){
+        this.service.remover(id)
+        .subscribe(
+            result => alert('excluido com sucesso.'),
+            erro => console.log(erro)
+        );
     }
 
 }

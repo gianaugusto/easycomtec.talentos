@@ -41,7 +41,6 @@ export class TalentoConhecimentoComponent extends TalentoBase implements OnInit 
                         
                         if(talentoCon){
                             talentoCon.titulo =  item.titulo; 
-              
                         }else{
 
                             talentoCon = new TalentoConhecimento();
@@ -62,6 +61,6 @@ export class TalentoConhecimentoComponent extends TalentoBase implements OnInit 
     SalvarConhecimento(event){
         event.preventDefault();
         
-        this.SalvarDados('/talento/done/');
+        this.SalvarDados('/talento/finished/');
     }
 }

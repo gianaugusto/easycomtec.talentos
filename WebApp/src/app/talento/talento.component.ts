@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import { Guid } from "../tools/Guid";
 
 @Component({
     moduleId: module.id,
@@ -10,10 +11,10 @@ import {Component, Input} from '@angular/core';
 export class TalentoComponent {
 
         constructor() {
-            //this.id = Guid.newGuid();
+            
         }
 
-        id:string;
+        @Input() id:string;
 
         @Input() nome:string;
 
@@ -56,13 +57,23 @@ export class TalentoComponent {
         @Input() informacaoBancaria:string; 
         
         @Input() linkCrud:string;
+        
+        novo:boolean;
 
         conhecimentos :TalentoConhecimento[];
 
         banco:TalentoBanco;
+        
+        public NovoBanco():void {
+            this.banco = new TalentoBanco("","","","","","","","");
+        }
 
         public AdicionarBanco(banco:TalentoBanco):void {
             this.banco = banco;
+        }
+
+        public NewID():void {
+            this.id = Guid.newGuid();
         }
 
         // public AdicionarConhecimento(conhecimento :TalentoConhecimento) {
@@ -89,7 +100,41 @@ export class TalentoConhecimento {
 }
 
 export class TalentoBanco {
-    
+        
+        constructor(
+        id :string,
+
+        bancoBeneficiario :string,
+
+        bancoCpf :string,
+
+        bancoNome :string,
+
+        bancoAgencia :string,
+
+        bancoContaCorrente :string,
+
+        bancoContaPoupanca :string,
+
+        bancoConta :string
+        ) {
+            this.id = id;
+
+            this.bancoBeneficiario = bancoBeneficiario;
+
+            this.bancoCpf = bancoCpf;
+
+            this.bancoNome = bancoNome;
+
+            this.bancoAgencia = bancoAgencia;
+
+            this.bancoContaCorrente = bancoContaCorrente;
+
+            this.bancoContaPoupanca = bancoContaPoupanca;
+
+            this.bancoConta = bancoConta;
+        }
+
         @Input() id :string;
 
         @Input() bancoBeneficiario :string;

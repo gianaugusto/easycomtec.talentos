@@ -19,17 +19,16 @@ export class TalentoBasicInfoComponent extends TalentoBase
         service:TalentoService,  
         dataService: TalentoDataService, 
         router: Router,
-        route:ActivatedRoute,
-        private formBuilder:FormBuilder
+        route:ActivatedRoute
     )
     {
         super(service,dataService,router,route);
     }
 
     BuildValidator(){
-        this.talentoForm = this.formBuilder.group({
-            nome:['',Validators.compose([Validators.required, Validators.minLength(4)])]
-        });
+        // this.talentoForm = this.formBuilder.group({
+        //     nome:['',Validators.compose([Validators.required, Validators.minLength(4)])]
+        // });
     }
 
     SalvarInfo(event){

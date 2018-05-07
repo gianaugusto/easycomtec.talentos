@@ -26,7 +26,7 @@
       <thead>
         <tr>
           <th></th>
-          <th>Nome</th>
+          <th>E-mail</th>
           <th>Soma das habilidades</th>
           <th>pretensao</th>
         </tr>
@@ -34,8 +34,8 @@
       <tbody>
         <tr *ngFor="let talento of talentos">
           <td> 
-              <a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>  </a>
-              <a [routerLink]="['/talento/',talento.Id]" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span>  </a>
+              <a [routerLink]="['/talento/basic/',talento.id]" class="btn btn-primary"> editar </a>
+              <a class="btn btn-default" (click)="excluir(talento.id)"> excluir  </a>
           </td>
           <td>{{talento.nome}}</td>
           <td>0</td>

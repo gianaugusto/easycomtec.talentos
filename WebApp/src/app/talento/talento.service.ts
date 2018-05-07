@@ -21,18 +21,19 @@ export class TalentoService {
                 .get<TalentoComponent[]>(environment.urlApiTalento);
     }
 
-    cadastrar(Talento:TalentoComponent): Observable<any> {
-        if(Talento.id){
+    cadastrar(talento:TalentoComponent): Observable<any> {
+        if(talento.novo == true){
             return this.http
-            .put(environment.urlApiTalento + '/' + Talento.id,Talento);
+            .post(environment.urlApiTalento,talento,{headers:this.headers});
+            
         }else{
             return this.http
-            .post(environment.urlApiTalento,JSON.stringify(Talento),{headers:this.headers});
+            .put(environment.urlApiTalento + '/' + talento.id,talento);
         }
     }
     
-    remover(Talento:TalentoComponent):Observable<Response>{
-        return this.http.delete<Response>(environment.urlApiTalento + "/" + Talento.id,{headers:this.headers});
+    remover(talentoId:string):Observable<Response>{
+        return this.http.delete<Response>(environment.urlApiTalento + "/" + talentoId,{headers:this.headers});
     }
 
     buscarPorEmail(email:string):Observable<TalentoComponent>{

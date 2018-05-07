@@ -60,8 +60,13 @@ namespace WebApi.Controllers
         [HttpPost]
         public void Post([FromBody]TalentoModel model)
         {
-            talentoRepository.Add(mapper.Map<Talento>(model));
-            talentoRepository.SaveChanges();
+            try{
+                talentoRepository.Add(mapper.Map<Talento>(model));
+                talentoRepository.SaveChanges();    
+            }catch(Exception ex){
+                Console.WriteLine(ex);
+            }
+
         }
 
         // PUT api/talento/5

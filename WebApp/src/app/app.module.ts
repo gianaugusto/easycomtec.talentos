@@ -14,7 +14,7 @@ import { TalentoConhecimentoComponent } from './talento-conhecimento/talento-con
 import { TalentoListagemComponent } from "./talento-listagem/talento-listagem.component";
 import { TalentoModule } from "./talento/talento.module";
 import { ConhecimentoModule } from "./conhecimento/conhecimento.module";
-
+import { TalentoFinishedComponent } from "./talento-finished/talento-finished.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +22,8 @@ import { ConhecimentoModule } from "./conhecimento/conhecimento.module";
     TalentoBasicInfoComponent,
     TalentoBancoComponent,
     TalentoConhecimentoComponent,
-    TalentoListagemComponent
+    TalentoListagemComponent,
+    TalentoFinishedComponent
   ],
   imports: [
     BrowserModule,

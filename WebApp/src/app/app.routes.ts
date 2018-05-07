@@ -4,6 +4,7 @@ import { TalentoBasicInfoComponent } from './talento-basic-info/talento-basic-in
 import { TalentoBancoComponent } from './talento-banco/talento-banco.component';
 import { TalentoConhecimentoComponent } from './talento-conhecimento/talento-conhecimento.component';
 import { TalentoListagemComponent } from "./talento-listagem/talento-listagem.component";
+import { TalentoFinishedComponent } from "./talento-finished/talento-finished.component";
 
 const appRoutes: Routes = [
     { path: '', component: TalentoEmailComponent },
@@ -12,6 +13,7 @@ const appRoutes: Routes = [
     { path: 'talento/basic/:id', component: TalentoBasicInfoComponent },
     { path: 'talento/banco/:id', component: TalentoBancoComponent },
     { path: 'talento/conhecimento/:id', component: TalentoConhecimentoComponent },
+    { path: 'talento/finished/:id', component: TalentoFinishedComponent },
     { path: '**', redirectTo: '' }
 ]
 
